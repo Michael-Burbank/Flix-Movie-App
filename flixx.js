@@ -13,7 +13,7 @@ const global = {
     }
 };
 
-// FETCHING 20 POPULAR MOVIES AND INJECCTING INTO THE DIV OF POPULAR MOVIIES
+// FETCHING 20 POPULAR MOVIES AND INJECTING INTO THE DIV OF POPULAR MOVIES
 async function displayPopularMovies() {
     const {results} = await fetchAPIData('movie/popular')
     
@@ -35,7 +35,7 @@ async function displayPopularMovies() {
         }
     </a>
     <div class="body-card">
-        <h5 class="card-ttle">${movie.title} </h5>
+        <h5 class="card-title">${movie.title} </h5>
         <p class="card-text">
             <small class="text-muted">Release: ${movie.release_date}</small>
         </p>
@@ -46,7 +46,7 @@ async function displayPopularMovies() {
     });
 }
 
-// FETCHING 20 TV SHOWS AND INJECCTING INTO THE DIV OF TV SHOWS
+// FETCHING 20 TV SHOWS AND INJECTING INTO THE DIV OF TV SHOWS
 async function displayPopularShows() {
     const {results} = await fetchAPIData('tv/popular')
     
@@ -68,7 +68,7 @@ async function displayPopularShows() {
         }
     </a>
     <div class="body-card">
-        <h5 class="card-ttle">${show.name} </h5>
+        <h5 class="card-title">${show.name} </h5>
         <p class="card-text">
             <small class="text-muted">Air Date: ${show.first_air_date}</small>
         </p>
@@ -275,7 +275,7 @@ function displaySearchResults(results) {
     }
   </a>
   <div class="body-card">
-    <h5 class="card-ttle">${global.search.type === 'movie' ? result.title : result.name} </h5>
+    <h5 class="card-title">${global.search.type === 'movie' ? result.title : result.name} </h5>
     <p class="card-text">
         <small class="text-muted">Release: ${global.search.type === 'movie' ? result.release_date : result.first_air_date}</small>
     </p>
@@ -332,7 +332,7 @@ function displayPagination() {
 
 
 
-// FETCHING 20 TV SHOWS AND INJECCTING INTO THE DIV OF TV SHOWS
+// FETCHING 20 TV SHOWS AND INJECTING INTO THE DIV OF TV SHOWS
 async function displayPopularShows() {
 const {results} = await fetchAPIData('tv/popular')
 
@@ -354,7 +354,7 @@ results.forEach(show => {
     }
 </a>
 <div class="body-card">
-    <h5 class="card-ttle">${show.name} </h5>
+    <h5 class="card-title">${show.name} </h5>
     <p class="card-text">
         <small class="text-muted">Air Date: ${show.first_air_date}</small>
     </p>
@@ -475,9 +475,9 @@ function highlightActiveLink() {
 } 
 
 // FUNCTION TO SHOW ALERT WHEN SEARCH TERM IS EMPTY
-function showAlert(message, classNmame = 'error') {
+function showAlert(message, className = 'error') {
   const alertEl = document.createElement('div')
-  alertEl.classList.add('alert', classNmame);
+  alertEl.classList.add('alert', className);
   alertEl.appendChild(document.createTextNode(message));
   document.querySelector('#alert').appendChild(alertEl);
   
